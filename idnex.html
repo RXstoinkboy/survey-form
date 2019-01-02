@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Knitting for life - survey</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="wrapper">
+        <!-- title -->
+        <h1 class="survey-title" id="title">Knitting for life</h1>
+
+        <!-- subtitle / decription -->
+        <p class="survey-subtitle" id="description">a customer survey</p>
+
+        <!-- form starts here -->
+
+        <form name="survey-form" class="form" id="survey-form">
+
+            <!-- CSS grid starts here -->
+            <label for="name" class="left" id="name-label">Please enter your name:</label>
+            <input type="text" name="name" placeholder="John Doe" class="right" id="name" required>
+
+            <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
+            <input type="email" name="email" placeholder="example@example.com" class="right" id="email" required>
+
+            <label for="age" class="left" id="number-label">How old are you ?</label>
+            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" required>
+
+            <!-- options -->
+            <label for="specialization" class="left" if="dropdown-label">What is you specialization?</label>
+            <select type="select" name="specialization" class="right" id="dropdown" required>
+                <option value="scarfs">Scarfs</option>
+                <option value="pillows">Pillows</option>
+                <option value="socks">Socks</option>
+                <option value="blankets">Blankets</option>
+                <option value="sweaters">Sweaters</option>
+                <option value="carpets">Carpets</option>
+                <option value="hats">Hats</option>
+                <option value="toys">Toys</option>
+                <option value="gloves">Gloves</option>
+                <option value="furniture">Furniture</option>
+                <option value="others">Others</option>
+            </select>
+
+            <!-- background radio buttons list-->
+            <label for="background" class="left">Which option best decribes why you are knitting?</label>
+            <div class="right">
+                <ul>
+                    <li class="radio">
+                        <label>Hobby
+                            <input class="radio__btn" type="radio" name="background" value="1">
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>Job
+                            <input class="radio__btn" type="radio" name="background" value="2">
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>Other
+                            <input class="radio__btn" type="radio" name="background" value="3">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- expiernce -->
+            <label for="experience" class="right">What types of items you have done so far?</label>
+            <div class="right">
+            <ul>
+                <li class="checkbox">
+                        <label>Scarfs
+                                <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                        </label>
+                </li>
+
+                <!-- TU SKONCZYLEM -->
+                <li class="checkbox">
+                        <label>Blankets
+                                <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                        </label>
+                </li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+                <li class="checkbox"></li>
+            </ul>
+            </div>
+
+            <!-- CSS grid ends here -->
+        </form>
+
+
+    </div>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
+
 </html>

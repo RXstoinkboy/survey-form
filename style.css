@@ -1,0 +1,37 @@
+:root{
+    --background: rgb(168, 42, 11);
+    --left: rgb(81, 165, 233);
+    --right:rgb(255, 251, 0);
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color:var(--background);
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 40px 40px;
+    grid-gap: 10px;
+}
+
+.left{
+    background-color: var(--left);
+}
+
+.right{
+    background-color: var(--right);
+}
