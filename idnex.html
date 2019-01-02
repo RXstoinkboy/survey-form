@@ -22,7 +22,7 @@
         <form name="survey-form" class="form" id="survey-form">
 
             <!-- CSS grid starts here -->
-         
+
             <label for="name" class="left" id="name-label">Please enter your name:</label>
             <input type="text" name="name" placeholder="John Doe" class="right" id="name" required>
 
@@ -31,7 +31,7 @@
 
             <label for="age" class="left" id="number-label">How old are you ?</label>
             <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" required>
-      
+
             <!-- options -->
             <label for="specialization" class="left" if="dropdown-label">What is you specialization?</label>
             <select type="select" name="specialization" class="right" id="dropdown" required>
@@ -53,18 +53,24 @@
             <fieldset class="right">
                 <ul>
                     <li class="radio">
-                        <label>Hobby
+                        <label>
                             <input class="radio__btn" type="radio" name="background" value="1">
+                            <i class="radio__state"></i>
+                            <span>Hobby</span>
                         </label>
                     </li>
                     <li class="radio">
-                        <label>Job
+                        <label>
                             <input class="radio__btn" type="radio" name="background" value="2">
+                            <i class="radio__state"></i>
+                            <span>Job</span>
                         </label>
                     </li>
                     <li class="radio">
-                        <label>Other
+                        <label>
                             <input class="radio__btn" type="radio" name="background" value="3">
+                            <i class="radio__state"></i>
+                            <span>Other</span>
                         </label>
                     </li>
                 </ul>
@@ -73,63 +79,85 @@
             <!-- experience -->
             <label for="experience" class="left left__experience">What types of items you have done so far?</label>
             <fieldset class="right right__experience">
-            <ul>
-                <li class="checkbox">
-                        <label>Scarfs
-                                <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                <ul>
+                    <li class="checkbox">
+                        <label>
+                            <span>Scarfs</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                            <i class="checkbox__state"></i>
                         </label>
-                </li>
-                <li class="checkbox">
-                        <label>Blankets
-                                <input class="checkbox__btn" type="checkbox" name="experience" value="blankets">
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Blankets</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="blankets">
+                            <i class="checkbox__state"></i>
                         </label>
-                </li>
-                <li class="checkbox">
-                    <label>Pillows
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="pillows">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Socks
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="socks">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Sweaters
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="sweaters">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Carpets
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="carpets">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Hats
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="hats">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Toys
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="toys">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Gloves
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="gloves">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Furniture
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="furniture">
-                </label>
-                </li>
-                <li class="checkbox">
-                    <label>Others
-                        <input class="checkbox__btn" type="checkbox" name="experience" value="others">
-                </label>
-                </li>
-            </ul>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Pillows</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="pillows">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Socks</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="socks">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Sweaters</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="sweaters">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Carpets</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="carpets">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Hats</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="hats">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Toys</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="toys">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Gloves</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="gloves">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Furniture</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="furniture">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                    <li class="checkbox">
+                        <label>
+                            <span>Others</span>
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="others">
+                            <i class="checkbox__state"></i>
+                        </label>
+                    </li>
+                </ul>
             </fieldset>
 
             <!-- textarea for additional comments -->
@@ -138,7 +166,7 @@
 
             <!-- submit button here -->
             <button type="submit" class="button" id="submit">Submit</button>
-            
+
             <!-- CSS grid ends here -->
         </form>
 
