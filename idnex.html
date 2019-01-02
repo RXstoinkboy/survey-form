@@ -22,6 +22,7 @@
         <form name="survey-form" class="form" id="survey-form">
 
             <!-- CSS grid starts here -->
+         
             <label for="name" class="left" id="name-label">Please enter your name:</label>
             <input type="text" name="name" placeholder="John Doe" class="right" id="name" required>
 
@@ -30,7 +31,7 @@
 
             <label for="age" class="left" id="number-label">How old are you ?</label>
             <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" required>
-
+      
             <!-- options -->
             <label for="specialization" class="left" if="dropdown-label">What is you specialization?</label>
             <select type="select" name="specialization" class="right" id="dropdown" required>
@@ -49,7 +50,7 @@
 
             <!-- background radio buttons list-->
             <label for="background" class="left">Which option best decribes why you are knitting?</label>
-            <div class="right">
+            <fieldset class="right">
                 <ul>
                     <li class="radio">
                         <label>Hobby
@@ -67,36 +68,77 @@
                         </label>
                     </li>
                 </ul>
-            </div>
+            </fieldset>
 
-            <!-- expiernce -->
+            <!-- experience -->
             <label for="experience" class="right">What types of items you have done so far?</label>
-            <div class="right">
+            <fieldset class="right">
             <ul>
                 <li class="checkbox">
                         <label>Scarfs
                                 <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
                         </label>
                 </li>
-
-                <!-- TU SKONCZYLEM -->
                 <li class="checkbox">
                         <label>Blankets
-                                <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                                <input class="checkbox__btn" type="checkbox" name="experience" value="blankets">
                         </label>
                 </li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
-                <li class="checkbox"></li>
+                <li class="checkbox">
+                    <label>Pillows
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="pillows">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Socks
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="socks">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Sweaters
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="sweaters">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Carpets
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="carpets">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Hats
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="hats">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Toys
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="toys">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Gloves
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="gloves">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Furniture
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="furniture">
+                </label>
+                </li>
+                <li class="checkbox">
+                    <label>Others
+                        <input class="checkbox__btn" type="checkbox" name="experience" value="others">
+                </label>
+                </li>
             </ul>
-            </div>
+            </fieldset>
 
+            <!-- textarea for additional comments -->
+            <label for="comments" class="top">Please leave your additional comments below:</label>
+            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?"></textarea>
+
+            <!-- submit button here -->
+            <button type="submit" class="button" id="submit">Submit</button>
+            
             <!-- CSS grid ends here -->
         </form>
 
