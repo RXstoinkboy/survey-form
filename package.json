@@ -1,0 +1,29 @@
+{
+  "name": "survey-form",
+  "version": "1.0.0",
+  "description": "survey form for FCC RWD certification",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '*.css, *.js' --browser 'FirefoxDeveloperEdition'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RXstoinkboy/survey-form.git"
+  },
+  "keywords": [
+    "css",
+    "grid",
+    "javascript",
+    "form",
+    "validation"
+  ],
+  "author": "Eryk Ludwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RXstoinkboy/survey-form/issues"
+  },
+  "homepage": "https://github.com/RXstoinkboy/survey-form#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  }
+}
