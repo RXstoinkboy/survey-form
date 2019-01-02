@@ -1,7 +1,8 @@
 :root{
-    --background: rgb(205, 130, 255);
-    --left: rgb(154, 210, 255);
-    --right:rgb(255, 217, 0);
+    --background: rgb(202, 225, 235);
+    --left: rgb(147, 217, 226);
+    --right:rgb(135, 181, 211);
+    --button: rgb(153, 10, 0);
 }
 
 html{
@@ -19,21 +20,51 @@ html{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color:var(--background);
+    background-color: var(--background);
 }
 
 .form{
     padding: 20px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px 40px 40px;
+    font-size:1.4em;
+    line-height:1.4em;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 10px;
 }
 
-.left{
+.left, .top{
     background-color: var(--left);
 }
 
-.right{
+.right, .bottom{
     background-color: var(--right);
+    width:100%;
+}
+
+.left__experience, .right__experience{
+    grid-column: 1/-1;
+}
+
+fieldset.right>ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.right__experience>ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.top, .bottom, .button{
+    grid-column: 1 / -1;
+}
+
+.button{
+    background: var(--button);
+    justify-self: center;
+    width: 60%;
+    padding: 20px 0;
 }
