@@ -1,6 +1,8 @@
 :root{
-    --background: rgba(255, 255, 255, 0.897);
-    --fields: rgba(0, 0, 0, 0.219);
+    --background: rgba(255, 255, 255, 0.797);
+    --fields: rgba(0, 0, 0, 0.319);
+    --fields-input: rgba(0, 0, 0, 0.119);
+    --fields-input-text:rgb(95, 95, 95);
     --fields-text: rgb(255, 255, 255);
     --title:rgb(36, 110, 160);
     --subtitle:rgb(80, 177, 241);

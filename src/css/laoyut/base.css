@@ -29,7 +29,7 @@ html{
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
-    box-shadow: 3px 3px 20px #000;
+    box-shadow: 6px 6px 15px #000;
 }
 
 /* title and subtitle */
@@ -41,6 +41,7 @@ html{
 .survey-subtitle{
     font-size: 2em;
     color: var(--subtitle);
+    border-bottom: 3px solid var(--title);
 }
 
 .survey-title, .survey-subtitle{
@@ -74,6 +75,8 @@ html{
 
 .right, .bottom{
     width:100%;
+    background-color: var(--fields-input);
+    color: var(--fields-input-text);
 }
 
 fieldset.right>ul{
@@ -82,4 +85,8 @@ fieldset.right>ul{
 
 .right__experience>ul{
     list-style: none;
+}
+
+.radio__text, .checkbox__text{
+    color: var(--fields-input-text);
 }
