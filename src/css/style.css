@@ -2,4 +2,5 @@
 @import './laoyut/base.css';
 @import './laoyut/grid.css';
 @import './partials/button.css';
-@import './laoyut/media.css'
+@import './laoyut/media.css';
+@import './partials/forms.css';

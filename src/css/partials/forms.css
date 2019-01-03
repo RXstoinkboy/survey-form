@@ -1,0 +1,14 @@
+/* radio element */
+.radio input{
+    /* hiding radio button */
+    
+};
+
+/* form elements */
+.radio input ~.radio__state{};
+.radio input ~.radio__text{
+};
+
+/* form element CHECKED */
+.radio input:checked ~.radio__state{};
+.radio input:checked ~.radio__text{};
