@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Charm|Lato:300');
+
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: lato;
+}
+
+/* basic form styling */
+.background{
+    padding: 30px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/src/images/background-image.jpg');
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.wrapper{
+    max-width: 800px;
+    background-color: var(--background);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 3px 3px 20px #000;
+}
+
+/* title and subtitle */
+.survey-title{
+    font-size: 3em;
+    color: var(--title);
+}
+
+.survey-subtitle{
+    font-size: 2em;
+    color: var(--subtitle);
+}
+
+.survey-title, .survey-subtitle{
+    text-align: center;
+    font-family: charm;
+}
+
+/* form layout and basic styling */
+.form{
+    padding: 20px 0;
+    font-size:1.4em;
+    line-height:1.4em;
+    max-width: 800px;
+}
+
+.left, .top, .right, .bottom{
+    background-color: var(--fields);
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    border: none;
+}
+
+.left{
+    text-align: right;
+}
+
+.left__experience{
+    text-align: left;
+}
+
+.right, .bottom{
+    width:100%;
+}
+
+fieldset.right>ul{
+    list-style: none;
+}
+
+.right__experience>ul{
+    list-style: none;
+}

@@ -1,0 +1,32 @@
+/* media queries */
+
+@media all and (max-width: 450px){
+    .background{
+        padding: 10px;
+    }
+    .wrapper{
+        margin: 2px;
+    }
+
+    .survey-title{
+        font-size: 2.5em;
+    }
+
+    .form{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 5px;
+    }
+}
+
+@media all and (max-width:721px){
+    .left, .top, .right, .bottom{
+        text-align: left;
+    }
+}
+
+@media all and (max-width: 1300px){
+    .background{
+        background-size: auto;
+        background-position: center;
+    }
+}

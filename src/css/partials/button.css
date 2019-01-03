@@ -1,0 +1,5 @@
+.button{
+    background: var(--button);
+    width: 60%;
+    padding: 20px 0;
+}

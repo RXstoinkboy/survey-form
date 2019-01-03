@@ -1,0 +1,27 @@
+.form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 5px;
+}
+
+.left__experience, .right__experience{
+    grid-column: 1/-1;
+}
+
+fieldset.right>ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.right__experience>ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.top, .bottom, .button{
+    grid-column: 1 / -1;
+}
+
+.button{
+    justify-self: center;
+}

@@ -1,0 +1,8 @@
+:root{
+    --background: rgba(255, 255, 255, 0.897);
+    --fields: rgba(0, 0, 0, 0.219);
+    --fields-text: rgb(255, 255, 255);
+    --title:rgb(36, 110, 160);
+    --subtitle:rgb(80, 177, 241);
+    --button: rgba(196, 74, 110, 0.712);
+}
