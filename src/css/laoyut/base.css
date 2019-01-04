@@ -86,7 +86,3 @@ fieldset.right>ul{
 .right__experience>ul{
     list-style: none;
 }
-
-.radio__text, .checkbox__text{
-    color: var(--fields-input-text);
-}
