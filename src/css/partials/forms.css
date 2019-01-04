@@ -44,6 +44,8 @@
 
 /* style after input is checked */
 .checkbox-cnt input:checked ~ .checkbox__state{
+    
+    animation: markCheckbox .3s linear;
     background-color: var(--title);
 }
 
@@ -73,7 +75,23 @@
     display: block;
 }
 
-/* radio buttons below*/
+/* animation when checkbox is marked */
+@keyframes markCheckbox{
+    0%{
+        transform: translatey(-50%) scale(0);
+        background-color: var(--fields-input);
+    }
+    80%{
+        transform: translatey(-50%) scale(1.2);
+        background-color: var(--title);
+    }
+    100%{
+        transform: translatey(-50%) scale(1);
+        background-color: var(--title);
+    }
+}
+
+/* RADIO BUTTONS BELOW */
 
 /* basic styling od radios */
 .radio-cnt{

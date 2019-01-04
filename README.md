@@ -1,7 +1,11 @@
 # Survey form example
-Example of a survey formo prepared for FCC RWD certification. I made it with CSS grid for layout + a little bit of npm scripts. FOr purpose of this exercise it is prepared with HTML5 validation, but it is also rebuild with JS custom validation.
+Example of a survey form prepared for FCC RWD certification. I made it with CSS grid for layout + a little bit of npm scripts. For purpose of this exercise it is prepared with HTML5 validation, but it is also going to be rebuilt with JS custom validation.
 
-I put more effort into customizing user experience beyond standard look of checkboxes, radios etc...
+I put more effort into customizing UX beyond standard look of checkboxes, radios etc...
+
+CSS could definitely be more DRY (especially as for radios and checkboxes).
+
+[watch preview](https://rxstoinkboy.github.io/survey-form/)
 
 ## Usage
 These are instructions needed for you in order to download this repo and run it on your local machine.
@@ -13,7 +17,7 @@ In order to run this repository and modify it you need [**NodeJS**][1] and **npm
 
 1. Clone the repo to your local environment:
     ```
-    https://rxstoinkboy.github.io/survey-form/
+    git clone https://rxstoinkboy.github.io/survey-form/
     ```
 
 2. Install all dependencies used for building this project:
@@ -33,11 +37,12 @@ In order to run this repository and modify it you need [**NodeJS**][1] and **npm
 
 ## Technology
 1. npm scripts - for automating work
-2. [Browser-sync][4] - to run local server and see live updates during work
+2. [Browser-sync][2] - to run local server and see live updates during work
 
 ## License
 
-This project is licensed under the MIT License - details in [LICENSE.md][10] file.
+This project is licensed under the MIT License - details in [LICENSE.md][3] file.
 
 [1]: https://nodejs.org/en/
-[4]: https://www.browsersync.io/
+[2]: https://www.browsersync.io/
+[3]: https://github.com/RXstoinkboy/survey-form/blob/master/LICENSE.md
