@@ -1,4 +1,13 @@
 .checkbox-cnt{
+    color: var(--fields-input-text);
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* .checkbox-cnt{
     display: block;
   position: relative;
   padding-left: 35px;
@@ -12,15 +21,18 @@
 }
 
 .checkbox-cnt input{
-    position: absolute;
+
+    /* hide checkbox */
+    /* position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
 
-.checkbox__state{
-    position: absolute;
+.checkbox__state{ */
+    /* new checkbox blank */
+    /* position: absolute;
   top: 0;
   left: 0;
   height: 25px;
@@ -28,26 +40,31 @@
   background-color: #eee;
 }
 
-.checkbox-cnt:hover input ~ .checkbox__state{
-    background-color: #ccc;
+.checkbox-cnt:hover input ~ .checkbox__state{ */
+    /* look on hover */
+    /* background-color: #ccc;
 }
 
-.checkbox-cnt input:checked ~ .checkbox__state{
-    background-color: #2196F3;
+.checkbox-cnt input:checked ~ .checkbox__state{ */
+    /* bg when marked */
+    /* background-color: #2196F3;
 }
 
-.checkbox__state:after{
-    content: "";
+.checkbox__state:after{ */
+    /* position of new content */
+    /* content: "";
     position: absolute;
     display: none;
 }
 
-.checkbox-cnt input:checked ~ .checkbox__state:after{
-    display: block;
-}
+.checkbox-cnt input:checked ~ .checkbox__state:after{ */
+    /* show new content when marked */
+    /* display: block;
+} */
 
-.checkbox-cnt .checkbox__state:after{
-    left: 9px;
+/* .checkbox-cnt .checkbox__state:after{ */ 
+    /* how the new content looks like */
+    /* left: 9px;
   top: 5px;
   width: 5px;
   height: 10px;
@@ -56,4 +73,4 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
