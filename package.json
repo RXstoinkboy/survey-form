@@ -4,6 +4,8 @@
   "description": "survey form for FCC RWD certification",
   "main": "index.js",
   "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "build:css": "npm run autoprefixer",
     "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
   },
   "repository": {
@@ -24,6 +26,9 @@
   },
   "homepage": "https://github.com/RXstoinkboy/survey-form#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.3"
+    "autoprefixer": "^9.4.4",
+    "browser-sync": "^2.26.3",
+    "chokidar-cli": "^1.2.1",
+    "postcss-cli": "^6.1.1"
   }
 }
