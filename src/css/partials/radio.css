@@ -1,0 +1,70 @@
+/* basic styling od radios */
+.radio-cnt{
+    color: var(--fields-input-text);
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding-left: 30px;
+    user-select: none;
+    transition: all .2s ease;
+}
+
+/* hide default radio buttons */
+.radio-cnt input{
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio btn */
+.radio__state{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--fields-input);
+    transform: translatey(-50%);
+    border-radius: 50%;
+    transition: all .2s ease;
+}
+
+/* hover effects */
+.radio-cnt:hover{
+    color: var(--fields-text);
+}
+
+.radio-cnt:hover input ~ .radio__state{
+    background-color: var(--fields-text);
+}
+
+.radio-cnt input:checked ~ .radio__state{
+    border: 1px solid var(--title);
+}
+
+/* create custom radio btn */
+
+/* create custom radio checkmark */
+.radio__state::before{
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+/* style the radio checkmark */
+.radio-cnt .radio__state::before{
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--title);
+}
+
+/* display it when marked */
+.radio-cnt input:checked ~ .radio__state::before{
+    display: block;
+}

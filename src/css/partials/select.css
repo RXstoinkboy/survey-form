@@ -1,0 +1,41 @@
+/* select container with overflow hidden */
+.select-cnt{
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    background: var(--fields-input);
+    /* color: var(--title); */
+}
+
+/* hide default selector graphics by setting width to 100% */
+.select-cnt select{
+    width: 115%;
+    background: none;
+    border: none;
+    height: 51px;
+    padding: 10px;
+    font-size: 1em;
+    color: var(--fields-input-text);
+}
+
+.select-cnt select option{
+    background: var(--fields-input);
+    color: var(--fields-input-text);
+    font-size: 1em;
+}
+
+/* insert new arrow graphics */
+.select-cnt::before{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 20px;
+    content: '';
+    border-left: 3px solid;
+    border-bottom: 3px solid; 
+    border-color: var(--fields-input);
+    transform: rotate(-45deg);
+    pointer-events: none;
+}

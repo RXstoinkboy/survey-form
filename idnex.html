@@ -35,8 +35,10 @@
             <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" required>
 
             <!-- options -->
-            <label for="specialization" class="left" if="dropdown-label">What is you specialization?</label>
-            <select type="select" name="specialization" class="right" id="dropdown" required>
+            <label for="specialization" class="left" id="dropdown-label">What is you specialization?</label>
+            <!-- ponizej mial klase "right" -->
+                <div class="right select-cnt">
+            <select type="select" name="specialization" id="dropdown" required>
                 <option value="scarfs">Scarfs</option>
                 <option value="pillows">Pillows</option>
                 <option value="socks">Socks</option>
@@ -48,7 +50,9 @@
                 <option value="gloves">Gloves</option>
                 <option value="furniture">Furniture</option>
                 <option value="others">Others</option>
+
             </select>
+        </div>
 
             <!-- background radio buttons list-->
             <label for="background" class="left">Which option best decribes why you are knitting?</label>
@@ -63,14 +67,14 @@
 
                     <li class="radio">
                         <label class="radio-cnt">Job
-                            <input type="radio" class="radio__btn" name="background" value="1">
+                            <input type="radio" class="radio__btn" name="background" value="2">
                             <span class="radio__state"></span>
                         </label>
                     </li>
 
                     <li class="radio">
                         <label class="radio-cnt">Other
-                            <input type="radio" class="radio__btn" name="background" value="1">
+                            <input type="radio" class="radio__btn" name="background" value="3">
                             <span class="radio__state"></span>
                         </label>
                     </li>
@@ -83,67 +87,67 @@
                 <ul>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Scarfs
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="scarfs">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="1">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Blankets
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="blankets">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="2">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Pillows
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="pillows">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="3">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Socks
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="socks">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="4">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Sweaters
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="sweaters">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="5">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Carpets
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="carpets">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="6">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Hats
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="hats">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="7">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Toys
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="toys">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="8">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Gloves
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="gloves">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="9">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Furniture
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="furniture">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="10">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Others
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="others">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="11">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>

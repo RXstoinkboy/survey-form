@@ -3,4 +3,6 @@
 @import './laoyut/grid.css';
 @import './partials/button.css';
 @import './laoyut/media.css';
-@import './partials/forms.css';
+@import './partials/radio.css';
+@import './partials/checkbox.css';
+@import './partials/select.css';
