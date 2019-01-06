@@ -8,7 +8,7 @@
     <title>Knitting for life - survey</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body class="background">
@@ -21,21 +21,22 @@
 
         <!-- form starts here -->
 
-        <form name="survey-form" class="form" id="survey-form">
+        <form name="survey-form" class="form" id="survey-form" method="post" action="/send-scripts.php">
 
             <!-- CSS grid starts here -->
-
             <label for="name" class="left" id="name-label">Please enter your name:</label>
-            <input type="text" name="name" placeholder="John Doe" class="right" id="name" required>
+            <input type="text" name="name" placeholder="John Doe" class="right" id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>
 
-            <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
-            <input type="email" name="email" placeholder="example@example.com" class="right" id="email" required>
+            <label for="email" class="left" id="email-label">Please enter your e-mail address:
+                <!-- <span class="field-error">This is error</span> -->
+            </label>
+            <input type="email" name="email" placeholder="example@example.com" class="right" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
 
-            <label for="age" class="left" id="number-label">How old are you ?</label>
-            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" required>
+            <label for="number" class="left" id="number-label">How old are you ?</label>
+            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" pattern="\d+" required>
 
             <!-- options -->
-            <label for="specialization" class="left" id="dropdown-label">What is you specialization?</label>
+            <label for="dropdown" class="left" id="dropdown-label">What is you specialization?</label>
             <!-- ponizej mial klase "right" -->
                 <div class="right select-cnt">
             <select type="select" name="specialization" id="dropdown" required>
@@ -56,7 +57,7 @@
 
             <!-- background radio buttons list-->
             <label for="background" class="left">Which option best decribes why you are knitting?</label>
-            <fieldset class="right">
+            <fieldset class="right" id="background">
                 <ul>
                     <li class="radio">
                         <label class="radio-cnt">Hobby
@@ -83,7 +84,7 @@
 
             <!-- experience -->
             <label for="experience" class="left left__experience">What types of items you have done so far?</label>
-            <fieldset class="right right__experience">
+            <fieldset class="right right__experience" id="experience">
                 <ul>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Scarfs
@@ -156,7 +157,7 @@
 
             <!-- textarea for additional comments -->
             <label for="comments" class="top">Please leave your additional comments below:</label>
-            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?"></textarea>
+            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?" pattern=".+" required></textarea>
 
             <!-- submit button here -->
             <button type="submit" class="button" id="submit">Submit</button>
@@ -165,9 +166,10 @@
         </form>
 
 
-    </div>
+    </fieldset>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script type="module" src="src/js/index.js"></script>
 </body>
 
 </html>

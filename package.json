@@ -4,9 +4,23 @@
   "description": "survey form for FCC RWD certification",
   "main": "index.js",
   "scripts": {
+    "sass:dist": "node-sass  -o src/css src/scss",
+    "sass": "node-sass --output-style compressed -o dist/css src/scss",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
-    "build:css": "npm run autoprefixer",
-    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
+    "webpack": "webpack --mode development",
+    "uglify": "uglifyjs dist/js/*.js -m -c -o dist/js/main.min.js",
+    "clean:img": "trash dist/images/*",
+    "clean:js": "trash dist/js/*",
+    "imagemin": "imagemin src/images/* --out-dir=dist/images/ -p",
+    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory",
+    "build:css": "npm-run-all -s sass:dist sass autoprefixer",
+    "build:js": "npm-run-all -s clean:js webpack uglify",
+    "build:img": "npm-run-all -s clean:img imagemin",
+    "build": "npm-run-all -p build:*",
+    "watch:css": "chokidar \"src/scss/*/*.scss\" -c \"npm run build:css\"",
+    "watch:js": "chokidar \"src/**/*.js\" -c \"npm run build:js\"",
+    "watch:img": "chokidar \"src/images/*\" -c \"npm run build:img\"",
+    "watch": "npm-run-all -p watch:*"
   },
   "repository": {
     "type": "git",
@@ -26,9 +40,28 @@
   },
   "homepage": "https://github.com/RXstoinkboy/survey-form#readme",
   "devDependencies": {
-    "autoprefixer": "^9.4.4",
+    "@babel/core": "^7.2.2",
+    "autoprefixer": "^9.4.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.3",
     "chokidar-cli": "^1.2.1",
-    "postcss-cli": "^6.1.1"
+    "circular-json": "^0.5.9",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "imagemin-cli": "^4.0.0",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.0.1",
+    "trash-cli": "^1.4.0",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.9",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
   }
 }

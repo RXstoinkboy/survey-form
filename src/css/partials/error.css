@@ -1,0 +1,14 @@
+.form input[type=text].error,
+.form input[type=email].error,
+.form textarea.error,
+.form .checkbox-cnt input.error ~ .state,
+.form .radio-cnt input.error ~ .state {
+    box-shadow: 0 0 2px 1px rgb(255, 27, 27);
+}
+.field-error {
+    position: absolute;
+    width: 100%;
+    color:red;
+    margin-top: 20px;
+    font-size:0.8rem;
+}
