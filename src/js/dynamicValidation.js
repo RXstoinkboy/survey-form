@@ -16,6 +16,7 @@ export function dynamicValidation(){
 
             } else{
                 this.classList.remove('error');
+                hideValidationError(this);
             }
         })
     });

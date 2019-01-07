@@ -25,16 +25,18 @@
 
             <!-- CSS grid starts here -->
             <label for="name" class="left" id="name-label">Please enter your name:</label>
-            <input type="text" name="name" placeholder="John Doe" class="right" id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>
-
-            <label for="email" class="left" id="email-label">Please enter your e-mail address:
-                <!-- <span class="field-error">This is error</span> -->
-            </label>
-            <input type="email" name="email" placeholder="example@example.com" class="right" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+            <div class="right-cnt">
+                <input type="text" name="name" placeholder="John Doe" class="right" data-error="Please make sure that input is correct..." id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>
+            </div>
+            <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
+            <div class="right-cnt">
+            <input type="email" name="email" placeholder="example@example.com" class="right" data-error="Please make sure that input is correct..." id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+</div>
 
             <label for="number" class="left" id="number-label">How old are you ?</label>
-            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" pattern="\d+" required>
-
+      <div class="right-cnt">
+            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" data-error="Please make sure that number is correct..." id="number" pattern="\d+" required>
+        </div>
             <!-- options -->
             <label for="dropdown" class="left" id="dropdown-label">What is you specialization?</label>
             <!-- ponizej mial klase "right" -->
@@ -157,8 +159,9 @@
 
             <!-- textarea for additional comments -->
             <label for="comments" class="top">Please leave your additional comments below:</label>
-            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?" pattern=".+" required></textarea>
-
+            <div class="bottom-cnt">
+            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" data-error="Please write your message before sending..." placeholder="What is on your mind?" pattern=".+" required></textarea>
+        </div>
             <!-- submit button here -->
             <button type="submit" class="button" id="submit">Submit</button>
 

@@ -105,13 +105,20 @@ function checkValidity(elements) {
   var fieldsAreValid = {
     i: true
   };
+  var bottomCnt = document.querySelector('.bottom-cnt');
+  var bottom = bottomCnt.querySelector('.bottom');
+  var rightCnt = document.querySelector('.right-cnt');
+  var right = rightCnt.querySelector('.right');
   elements.forEach(function (elem) {
     if (elem.checkValidity()) {
       elem.classList.remove('error');
-      elem.classList.remove('notValid');
     } else {
       elem.classList.add('error');
-      elem.classList.add('notValid');
+      var errorHint = document.createElement('div');
+      var errorText = right.dataset.error;
+      errorHint.classList.add('notValid');
+      errorHint.innerText = errorText;
+      rightCnt.appendChild(errorHint);
       fieldsAreValid.i = false;
     }
   });
@@ -151,6 +158,7 @@ function dynamicValidation() {
         this.classList.add('error');
       } else {
         this.classList.remove('error');
+        hideValidationError(this);
       }
     });
   }); // after pressing 'submit' check if everything is correct again
