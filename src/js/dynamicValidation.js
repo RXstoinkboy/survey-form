@@ -1,3 +1,6 @@
+import { checkValidity } from './checkValidity.js';
+import { sendData } from './sendData.js';
+
 export function dynamicValidation(){
     const form = document.querySelector('.form');
     const inputs = form.querySelectorAll('input[required], input[type=radio], textarea[required]');
@@ -15,5 +18,14 @@ export function dynamicValidation(){
                 this.classList.remove('error');
             }
         })
+    });
+
+    // after pressing 'submit' check if everything is correct again
+     form.addEventListener('submit', e=>{
+        e.preventDefault();
+
+        if(checkValidity(inputs)){
+            sendData();
+        }
     })
 }

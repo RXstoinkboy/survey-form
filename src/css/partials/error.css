@@ -12,3 +12,7 @@
     margin-top: 20px;
     font-size:0.8rem;
 }
+
+.notValid{
+    background: linear-gradient(-45deg, rgba(255, 0, 0, 0.384), rgba(255, 102, 0, 0.301));
+}

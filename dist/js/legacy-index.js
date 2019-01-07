@@ -86,6 +86,40 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/checkValidity.js":
+/*!*********************************!*\
+  !*** ./src/js/checkValidity.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.checkValidity = checkValidity;
+
+function checkValidity(elements) {
+  var fieldsAreValid = {
+    i: true
+  };
+  elements.forEach(function (elem) {
+    if (elem.checkValidity()) {
+      elem.classList.remove('error');
+      elem.classList.remove('notValid');
+    } else {
+      elem.classList.add('error');
+      elem.classList.add('notValid');
+      fieldsAreValid.i = false;
+    }
+  });
+  return fieldsAreValid;
+}
+
+/***/ }),
+
 /***/ "./src/js/dynamicValidation.js":
 /*!*************************************!*\
   !*** ./src/js/dynamicValidation.js ***!
@@ -101,6 +135,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dynamicValidation = dynamicValidation;
 
+var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/checkValidity.js");
+
+var _sendData = __webpack_require__(/*! ./sendData.js */ "./src/js/sendData.js");
+
 function dynamicValidation() {
   var form = document.querySelector('.form');
   var inputs = form.querySelectorAll('input[required], input[type=radio], textarea[required]'); // disable default validation
@@ -115,6 +153,14 @@ function dynamicValidation() {
         this.classList.remove('error');
       }
     });
+  }); // after pressing 'submit' check if everything is correct again
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if ((0, _checkValidity.checkValidity)(inputs)) {
+      (0, _sendData.sendData)();
+    }
   });
 }
 
@@ -132,7 +178,42 @@ function dynamicValidation() {
 
 var _dynamicValidation = __webpack_require__(/*! ./dynamicValidation.js */ "./src/js/dynamicValidation.js");
 
+var _sendData = __webpack_require__(/*! ./sendData.js */ "./src/js/sendData.js");
+
+var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/checkValidity.js");
+
 (0, _dynamicValidation.dynamicValidation)();
+
+/***/ }),
+
+/***/ "./src/js/sendData.js":
+/*!****************************!*\
+  !*** ./src/js/sendData.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sendData = sendData;
+
+function sendData() {
+  var form = document.querySelector('.form');
+  var elements = form.querySelectorAll('input:not(:disabled), textarea:not(:disabled)');
+  var submit = document.querySelector('button'); // prepare data for sending
+
+  var dataToSend = new FormData();
+  elements.forEach(function (el) {
+    dataToSend.append(el.name, el.value);
+  }); // disable 'submit' button until data is sent
+
+  submit.disabled = true;
+  submit.classList.add = 'sendingData';
+}
 
 /***/ })
 
