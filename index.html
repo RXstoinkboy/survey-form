@@ -25,16 +25,16 @@
 
             <!-- CSS grid starts here -->
             <label for="name" class="left" id="name-label">Please enter your name:</label>
-            <div class="right-cnt" data-error="Please make sure that input is correct...">
+            <div class="right-cnt" data-error="Please make sure that input is correct">
                 <input type="text" name="name" placeholder="John Doe" class="right" id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>
             </div>
                 <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
-            <div class="right-cnt" data-error="Please make sure that input is correct...">
+            <div class="right-cnt" data-error="Please make sure that input is correct">
                 <input type="email" name="email" placeholder="example@example.com" class="right" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
             </div>
 
             <label for="number" class="left" id="number-label">How old are you ?</label>
-      <div class="right-cnt" data-error="Please make sure that number is correct...">
+      <div class="right-cnt" data-error="Please make sure that number is correct">
             <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" pattern="\d+" required>
         </div>
             <!-- options -->
@@ -59,7 +59,7 @@
 
             <!-- background radio buttons list-->
             <label for="background" class="left">Which option best decribes why you are knitting?</label>
-            <fieldset class="right right__radios" id="background" data-error="Please choose one...">
+            <fieldset class="right right--radios" id="background" data-error="Please choose one">
                 <ul>
                     <li class="radio">
                         <label class="radio-cnt">Hobby
@@ -85,8 +85,8 @@
             </fieldset>
 
             <!-- experience -->
-            <label for="experience" class="left left__experience">What types of items you have done so far?</label>
-            <fieldset class="right right__experience" id="experience" data-error="Mark at least one...">
+            <label for="experience" class="left left--experience">What types of items you have done so far?</label>
+            <fieldset class="right right--experience" id="experience" data-error="Mark at least one">
                 <ul>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Scarfs
@@ -159,7 +159,7 @@
 
             <!-- textarea for additional comments -->
             <label for="comments" class="top">Please leave your additional comments below:</label>
-            <div class="bottom-cnt" data-error="Please write your message before sending...">
+            <div class="bottom-cnt" data-error="Please write your message before sending">
             <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?" pattern=".+" required></textarea>
         </div>
             <!-- submit button here -->

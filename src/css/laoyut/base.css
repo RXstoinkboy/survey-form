@@ -72,11 +72,11 @@ input:focus, textarea:focus{
     position: relative;
 }
 
-.left__experience{
+.left--experience{
     text-align: left;
 }
 
-.right__experience, .right__radios{
+.right--experience, .right--radios{
     position: relative;
 }
 
@@ -107,7 +107,7 @@ fieldset.right>ul{
     list-style: none;
 }
 
-.right__experience>ul{
+.right--experience>ul{
     list-style: none;
 }
 

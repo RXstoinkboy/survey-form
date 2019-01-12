@@ -16,7 +16,7 @@ export function checkForErrors(elems = [], checkboxMarked, radioMark){
         }  
     });
 
-        const checkboxFieldset = document.querySelector('.right__experience');
+        const checkboxFieldset = document.querySelector('.right--experience');
     
         if(checkboxMarked === 0){
             showValidationHint(checkboxFieldset);
@@ -27,7 +27,7 @@ export function checkForErrors(elems = [], checkboxMarked, radioMark){
             hideCheckboxError(checkboxMarked);
         }
 
-        const radioCnt = document.querySelector('.right__radios');
+        const radioCnt = document.querySelector('.right--radios');
 
         if(radioMark === false){
             showValidationHint(radioCnt);

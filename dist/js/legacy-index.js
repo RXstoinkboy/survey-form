@@ -122,7 +122,7 @@ function checkForErrors() {
       }
     }
   });
-  var checkboxFieldset = document.querySelector('.right__experience');
+  var checkboxFieldset = document.querySelector('.right--experience');
 
   if (checkboxMarked === 0) {
     (0, _toggleValidationHint.showValidationHint)(checkboxFieldset);
@@ -132,7 +132,7 @@ function checkForErrors() {
     (0, _toggleValidationHint.hideCheckboxError)(checkboxMarked);
   }
 
-  var radioCnt = document.querySelector('.right__radios');
+  var radioCnt = document.querySelector('.right--radios');
 
   if (radioMark === false) {
     (0, _toggleValidationHint.showValidationHint)(radioCnt);
@@ -186,7 +186,7 @@ function checkValidity() {
   });
   checks.forEach(function (input) {
     input.addEventListener('click', function () {
-      var checkboxFieldset = document.querySelector('.right__experience');
+      var checkboxFieldset = document.querySelector('.right--experience');
 
       if (this.checked) {
         checkboxMarked++;
@@ -204,7 +204,7 @@ function checkValidity() {
   });
   radios.forEach(function (radio) {
     radio.addEventListener('click', function () {
-      var radioCnt = document.querySelector('fieldset.right');
+      var radioCnt = document.querySelector('.right--radios');
 
       if (this.checked) {
         radioMark = true;
@@ -238,8 +238,6 @@ var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/che
 
 var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/checkForErrors.js");
 
-var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */ "./src/js/toggleValidationHint.js");
-
 (0, _checkValidity.checkValidity)();
 (0, _checkForErrors.checkForErrors)();
 
@@ -264,7 +262,7 @@ exports.hideCheckboxError = hideCheckboxError;
 exports.hideRadioError = hideRadioError;
 
 function showValidationHint(elem) {
-  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt") || elem.closest(".right__experience") || elem.closest(".right__radios");
+  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt") || elem.closest(".right--experience") || elem.closest(".right--radios");
   var errorField = inputCnt.querySelector('.notValid');
 
   if (errorField === null) {
@@ -286,7 +284,7 @@ function hideValidationHint(elem) {
 }
 
 function hideCheckboxError() {
-  var checkboxCnt = document.querySelector('.right__experience');
+  var checkboxCnt = document.querySelector('.right--experience');
   var errorField = checkboxCnt.querySelector('.notValid');
 
   if (errorField !== null) {
@@ -295,7 +293,7 @@ function hideCheckboxError() {
 }
 
 function hideRadioError() {
-  var radioCnt = document.querySelector('fieldset.right');
+  var radioCnt = document.querySelector('.right--radios');
   var errorField = radioCnt.querySelector('.notValid');
 
   if (errorField !== null) {

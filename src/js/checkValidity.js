@@ -24,7 +24,7 @@ export function checkValidity(){
 
     checks.forEach(input => {
         input.addEventListener('click', function(){
-            const checkboxFieldset = document.querySelector('.right__experience');
+            const checkboxFieldset = document.querySelector('.right--experience');
                        
             if(this.checked){
                 checkboxMarked++;                    
@@ -43,7 +43,7 @@ export function checkValidity(){
 
     radios.forEach(radio => {
         radio.addEventListener('click', function(){
-            const radioCnt = document.querySelector('fieldset.right');
+            const radioCnt = document.querySelector('.right--radios');
 
             if(this.checked){
                 radioMark = true;

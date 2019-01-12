@@ -4,7 +4,7 @@
     grid-gap: 5px;
 }
 
-.left__experience, .right__experience{
+.left--experience, .right--experience{
     grid-column: 1/-1;
 }
 
