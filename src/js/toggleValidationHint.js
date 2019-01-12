@@ -1,21 +1,21 @@
 export function showValidationHint(elem){
-    const inputCntRight = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`);
-    const errorFieldRight = inputCntRight.querySelector('.notValid');
+    const inputCnt = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`);
+    const errorField = inputCnt.querySelector('.notValid');
 
-    if(errorFieldRight === null){
-        const errorText = inputCntRight.dataset.error;
+    if(errorField === null){
+        const errorText = inputCnt.dataset.error;
         const errorDivRight = document.createElement('div');
         errorDivRight.classList.add('notValid');
         errorDivRight.innerText = errorText;
-        inputCntRight.appendChild(errorDivRight);
+        inputCnt.appendChild(errorDivRight);
     }
 }
 
 export function hideValidationHint(elem){
-    const inputCntRight = elem.closest('.right-cnt');
-    const errorFieldRight = inputCntRight.querySelector('.notValid');
+    const inputCnt = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`);
+    const errorField = inputCnt.querySelector('.notValid');
 
-    if(errorFieldRight !== null){
-        errorFieldRight.remove();
+    if(errorField !== null){
+        errorField.remove();
     }
 }

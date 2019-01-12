@@ -207,24 +207,24 @@ exports.showValidationHint = showValidationHint;
 exports.hideValidationHint = hideValidationHint;
 
 function showValidationHint(elem) {
-  var inputCntRight = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
-  var errorFieldRight = inputCntRight.querySelector('.notValid');
+  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
+  var errorField = inputCnt.querySelector('.notValid');
 
-  if (errorFieldRight === null) {
-    var errorText = inputCntRight.dataset.error;
+  if (errorField === null) {
+    var errorText = inputCnt.dataset.error;
     var errorDivRight = document.createElement('div');
     errorDivRight.classList.add('notValid');
     errorDivRight.innerText = errorText;
-    inputCntRight.appendChild(errorDivRight);
+    inputCnt.appendChild(errorDivRight);
   }
 }
 
 function hideValidationHint(elem) {
-  var inputCntRight = elem.closest('.right-cnt');
-  var errorFieldRight = inputCntRight.querySelector('.notValid');
+  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
+  var errorField = inputCnt.querySelector('.notValid');
 
-  if (errorFieldRight !== null) {
-    errorFieldRight.remove();
+  if (errorField !== null) {
+    errorField.remove();
   }
 }
 
