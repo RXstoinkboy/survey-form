@@ -1,6 +1,6 @@
-import {showValidationHint, hideValidationHint, hideCheckboxError} from './toggleValidationHint.js';
+import {showValidationHint, hideValidationHint, hideCheckboxError, hideRadioError} from './toggleValidationHint.js';
 
-export function checkForErrors(elems = [], checkboxMarked){
+export function checkForErrors(elems = [], checkboxMarked, radioMark){
     const fieldsAreValid = {s: true};
     
     elems.forEach(elem => {
@@ -18,7 +18,6 @@ export function checkForErrors(elems = [], checkboxMarked){
 
         const checkboxFieldset = document.querySelector('.right__experience');
     
-        console.log(checkboxMarked);
         if(checkboxMarked === 0){
             showValidationHint(checkboxFieldset);
             checkboxFieldset.classList.add('error');
@@ -26,6 +25,16 @@ export function checkForErrors(elems = [], checkboxMarked){
 
         } else if (checkboxMarked !== 0){
             hideCheckboxError(checkboxMarked);
+        }
+
+        const radioCnt = document.querySelector('.right__radios');
+
+        if(radioMark === false){
+            showValidationHint(radioCnt);
+            radioCnt.classList.add('error');
+            fieldsAreValid.s = false;
+        } else if (radioMark === true){
+            hideRadioError();
         }
 
     return fieldsAreValid.s;

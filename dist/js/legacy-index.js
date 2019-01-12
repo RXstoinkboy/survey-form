@@ -106,6 +106,7 @@ var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */
 function checkForErrors() {
   var elems = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var checkboxMarked = arguments[1];
+  var radioMark = arguments[2];
   var fieldsAreValid = {
     s: true
   };
@@ -122,7 +123,6 @@ function checkForErrors() {
     }
   });
   var checkboxFieldset = document.querySelector('.right__experience');
-  console.log(checkboxMarked);
 
   if (checkboxMarked === 0) {
     (0, _toggleValidationHint.showValidationHint)(checkboxFieldset);
@@ -130,6 +130,16 @@ function checkForErrors() {
     fieldsAreValid.s = false;
   } else if (checkboxMarked !== 0) {
     (0, _toggleValidationHint.hideCheckboxError)(checkboxMarked);
+  }
+
+  var radioCnt = document.querySelector('.right__radios');
+
+  if (radioMark === false) {
+    (0, _toggleValidationHint.showValidationHint)(radioCnt);
+    radioCnt.classList.add('error');
+    fieldsAreValid.s = false;
+  } else if (radioMark === true) {
+    (0, _toggleValidationHint.hideRadioError)();
   }
 
   return fieldsAreValid.s;
@@ -160,7 +170,9 @@ function checkValidity() {
   var form = document.querySelector('.form');
   var inputs = form.querySelectorAll('input[required], textarea[required]');
   var checks = form.querySelectorAll('input[type=checkbox]');
+  var radios = form.querySelectorAll('input[type=radio]');
   var checkboxMarked = 0;
+  var radioMark = false;
   form.setAttribute('novalidate', true);
   inputs.forEach(function (input) {
     input.addEventListener('input', function () {
@@ -190,10 +202,21 @@ function checkValidity() {
       }
     });
   });
+  radios.forEach(function (radio) {
+    radio.addEventListener('click', function () {
+      var radioCnt = document.querySelector('fieldset.right');
+
+      if (this.checked) {
+        radioMark = true;
+        radioCnt.classList.remove('error');
+        (0, _toggleValidationHint.hideRadioError)();
+      }
+    });
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if ((0, _checkForErrors.checkForErrors)(inputs, checkboxMarked)) {
+    if ((0, _checkForErrors.checkForErrors)(inputs, checkboxMarked, radioMark)) {
       console.log('zgoda');
     }
   });
@@ -238,9 +261,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.showValidationHint = showValidationHint;
 exports.hideValidationHint = hideValidationHint;
 exports.hideCheckboxError = hideCheckboxError;
+exports.hideRadioError = hideRadioError;
 
 function showValidationHint(elem) {
-  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt") || elem.closest(".right__experience");
+  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt") || elem.closest(".right__experience") || elem.closest(".right__radios");
   var errorField = inputCnt.querySelector('.notValid');
 
   if (errorField === null) {
@@ -261,9 +285,18 @@ function hideValidationHint(elem) {
   }
 }
 
-function hideCheckboxError(cnt) {
+function hideCheckboxError() {
   var checkboxCnt = document.querySelector('.right__experience');
   var errorField = checkboxCnt.querySelector('.notValid');
+
+  if (errorField !== null) {
+    errorField.remove();
+  }
+}
+
+function hideRadioError() {
+  var radioCnt = document.querySelector('fieldset.right');
+  var errorField = radioCnt.querySelector('.notValid');
 
   if (errorField !== null) {
     errorField.remove();

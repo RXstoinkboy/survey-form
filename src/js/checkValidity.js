@@ -1,11 +1,13 @@
-import {hideValidationHint, hideCheckboxError} from './toggleValidationHint.js';
+import {hideValidationHint, hideCheckboxError, hideRadioError} from './toggleValidationHint.js';
 import { checkForErrors } from './checkForErrors.js';
 
 export function checkValidity(){
     const form = document.querySelector('.form');
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     const checks = form.querySelectorAll('input[type=checkbox]');
-    let checkboxMarked = 0;  
+    const radios = form.querySelectorAll('input[type=radio]');
+    let checkboxMarked = 0;
+    let radioMark = false;
 
     form.setAttribute('novalidate', true);
 
@@ -39,9 +41,21 @@ export function checkValidity(){
         })
     })
 
+    radios.forEach(radio => {
+        radio.addEventListener('click', function(){
+            const radioCnt = document.querySelector('fieldset.right');
+
+            if(this.checked){
+                radioMark = true;
+                radioCnt.classList.remove('error');
+                hideRadioError();
+            }
+        })
+    })
+
     form.addEventListener('submit', function(e){
         e.preventDefault();
-        if(checkForErrors(inputs, checkboxMarked)){
+        if(checkForErrors(inputs, checkboxMarked, radioMark)){
             
             console.log('zgoda');
         }

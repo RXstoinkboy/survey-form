@@ -1,5 +1,5 @@
 export function showValidationHint(elem){
-    const inputCnt = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`) || elem.closest(`.right__experience`);
+    const inputCnt = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`) || elem.closest(`.right__experience`) || elem.closest(`.right__radios`);
     const errorField = inputCnt.querySelector('.notValid');
 
     if(errorField === null){
@@ -20,9 +20,18 @@ export function hideValidationHint(elem){
     }
 }
 
-export function hideCheckboxError(cnt){
+export function hideCheckboxError(){
     const checkboxCnt = document.querySelector('.right__experience');
     const errorField = checkboxCnt.querySelector('.notValid');
+
+    if(errorField !== null){
+        errorField.remove();
+    }
+}
+
+export function hideRadioError(){
+    const radioCnt = document.querySelector('fieldset.right');
+    const errorField = radioCnt.querySelector('.notValid');
 
     if(errorField !== null){
         errorField.remove();
