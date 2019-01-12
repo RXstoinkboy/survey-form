@@ -1,5 +1,5 @@
 export function showValidationHint(elem){
-    const inputCntRight = elem.closest('.right-cnt');
+    const inputCntRight = elem.closest(`.right-cnt`) || elem.closest(`.bottom-cnt`);
     const errorFieldRight = inputCntRight.querySelector('.notValid');
 
     if(errorFieldRight === null){

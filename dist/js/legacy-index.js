@@ -183,6 +183,8 @@ var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/che
 
 var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/checkForErrors.js");
 
+var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */ "./src/js/toggleValidationHint.js");
+
 (0, _checkValidity.checkValidity)();
 (0, _checkForErrors.checkForErrors)();
 
@@ -205,7 +207,7 @@ exports.showValidationHint = showValidationHint;
 exports.hideValidationHint = hideValidationHint;
 
 function showValidationHint(elem) {
-  var inputCntRight = elem.closest('.right-cnt');
+  var inputCntRight = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
   var errorFieldRight = inputCntRight.querySelector('.notValid');
 
   if (errorFieldRight === null) {
