@@ -166,6 +166,8 @@ var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */
 
 var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/checkForErrors.js");
 
+var _sendData = __webpack_require__(/*! ./sendData.js */ "./src/js/sendData.js");
+
 function checkValidity() {
   var form = document.querySelector('.form');
   var inputs = form.querySelectorAll('input[required], textarea[required]');
@@ -217,7 +219,8 @@ function checkValidity() {
     e.preventDefault();
 
     if ((0, _checkForErrors.checkForErrors)(inputs, checkboxMarked, radioMark)) {
-      console.log('zgoda');
+      console.log('ready to send');
+      (0, _sendData.sendData)();
     }
   });
 }
@@ -240,6 +243,36 @@ var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/c
 
 (0, _checkValidity.checkValidity)();
 (0, _checkForErrors.checkForErrors)();
+
+/***/ }),
+
+/***/ "./src/js/sendData.js":
+/*!****************************!*\
+  !*** ./src/js/sendData.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sendData = sendData;
+
+function sendData() {
+  // prepare data which will be sent
+  var data = document.querySelectorAll('input:not(:disabled), textarea:not(:disabled), select:not(:disabled)');
+  var dataToBeSent = new FormData();
+  data.forEach(function (el) {
+    return dataToBeSent.append(el.name, el.value);
+  }); // disable submit button to prevent mashing and add loading animation
+
+  var submitBtn = document.querySelector('.button');
+  submitBtn.disabled = true;
+  submitBtn.classList.add('sendingData');
+}
 
 /***/ }),
 

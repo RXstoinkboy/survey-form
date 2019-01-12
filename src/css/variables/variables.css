@@ -1,12 +1,13 @@
-:root{
+:root {
     --background: rgba(255, 255, 255, 0.797);
     --fields: rgba(0, 0, 0, 0.319);
     --fields-input: rgba(0, 0, 0, 0.119);
-    --fields-input-text:rgb(95, 95, 95);
+    --fields-input-text: rgb(95, 95, 95);
     --fields-text: rgb(255, 255, 255);
-    --title:rgb(36, 110, 160);
-    --subtitle:rgb(80, 177, 241);
+    --title: rgb(36, 110, 160);
+    --subtitle: rgb(80, 177, 241);
     --button: rgba(196, 74, 110, 0.712);
     --error: rgb(192, 27, 27);
 }
+
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhcmlhYmxlcy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5Q0FBeUM7SUFDekMsK0JBQStCO0lBQy9CLHFDQUFxQztJQUNyQyxvQ0FBb0M7SUFDcEMsa0NBQWtDO0lBQ2xDLDBCQUEwQjtJQUMxQiw2QkFBNkI7SUFDN0Isb0NBQW9DO0NBQ3ZDIiwiZmlsZSI6InZhcmlhYmxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6cm9vdHtcclxuICAgIC0tYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjc5Nyk7XHJcbiAgICAtLWZpZWxkczogcmdiYSgwLCAwLCAwLCAwLjMxOSk7XHJcbiAgICAtLWZpZWxkcy1pbnB1dDogcmdiYSgwLCAwLCAwLCAwLjExOSk7XHJcbiAgICAtLWZpZWxkcy1pbnB1dC10ZXh0OnJnYig5NSwgOTUsIDk1KTtcclxuICAgIC0tZmllbGRzLXRleHQ6IHJnYigyNTUsIDI1NSwgMjU1KTtcclxuICAgIC0tdGl0bGU6cmdiKDM2LCAxMTAsIDE2MCk7XHJcbiAgICAtLXN1YnRpdGxlOnJnYig4MCwgMTc3LCAyNDEpO1xyXG4gICAgLS1idXR0b246IHJnYmEoMTk2LCA3NCwgMTEwLCAwLjcxMik7XHJcbn0iXX0= */

@@ -1,14 +1,14 @@
 /* basic styling of the whole checkbox block */
-.checkbox-cnt{
+.checkbox-cnt {
     color: var(--fields-input-text);
     display: block;
     position: relative;
     padding-left: 30px;
     cursor: pointer;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transition: all 0.2s ease;
 }
 
@@ -23,11 +23,11 @@
 }
 
 /* new checkbox styling */
-.checkbox__state{
+.checkbox__state {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     left: 0;
     display: block;
     width: 20px;
@@ -38,34 +38,34 @@
 }
 
 /* hover effects */
-.checkbox-cnt:hover{
+.checkbox-cnt:hover {
     color: var(--fields-text);
 }
 
-.checkbox-cnt:hover input ~ .checkbox__state{
+.checkbox-cnt:hover input~.checkbox__state {
     background-color: var(--fields-text);
 }
 
 /* style after input is checked */
-.checkbox-cnt input:checked ~ .checkbox__state{
-    
+.checkbox-cnt input:checked~.checkbox__state {
+
     -webkit-animation: markCheckbox .2s ease;
-    
-            animation: markCheckbox .2s ease;
+
+    animation: markCheckbox .2s ease;
     background-color: var(--title);
 }
 
 /* create custom checkmark below*/
 
 /* checkmark hidden when not:checked */
-.checkbox__state::before{
+.checkbox__state::before {
     content: '';
     position: absolute;
     display: none;
 }
 
 /* style of the checkmark */
-.checkbox-cnt .checkbox__state::before{
+.checkbox-cnt .checkbox__state::before {
     top: -3px;
     left: 5px;
     width: 10px;
@@ -73,48 +73,54 @@
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
     z-index: 2;
 }
 
 /* display after :checked */
-.checkbox-cnt input:checked ~ .checkbox__state::before{
+.checkbox-cnt input:checked~.checkbox__state::before {
     display: block;
 }
 
 /* animation when checkbox is marked */
-@-webkit-keyframes markCheckbox{
-    0%{
+@-webkit-keyframes markCheckbox {
+    0% {
         -webkit-transform: translatey(-50%) scale(.7);
-                transform: translatey(-50%) scale(.7);
+        transform: translatey(-50%) scale(.7);
         background-color: var(--fields-input);
     }
-    60%{
+
+    60% {
         -webkit-transform: translatey(-50%) scale(1.3);
-                transform: translatey(-50%) scale(1.3);
+        transform: translatey(-50%) scale(1.3);
         background-color: var(--title);
     }
-    100%{
+
+    100% {
         -webkit-transform: translatey(-50%) scale(1);
-                transform: translatey(-50%) scale(1);
+        transform: translatey(-50%) scale(1);
         background-color: var(--title);
     }
 }
-@keyframes markCheckbox{
-    0%{
+
+@keyframes markCheckbox {
+    0% {
         -webkit-transform: translatey(-50%) scale(.7);
-                transform: translatey(-50%) scale(.7);
+        transform: translatey(-50%) scale(.7);
         background-color: var(--fields-input);
     }
-    60%{
+
+    60% {
         -webkit-transform: translatey(-50%) scale(1.3);
-                transform: translatey(-50%) scale(1.3);
+        transform: translatey(-50%) scale(1.3);
         background-color: var(--title);
     }
-    100%{
+
+    100% {
         -webkit-transform: translatey(-50%) scale(1);
-                transform: translatey(-50%) scale(1);
+        transform: translatey(-50%) scale(1);
         background-color: var(--title);
     }
 }
+
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNoZWNrYm94LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwrQ0FBK0M7QUFDL0M7SUFDSSxnQ0FBZ0M7SUFDaEMsZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLDBCQUFrQjtPQUFsQix1QkFBa0I7UUFBbEIsc0JBQWtCO1lBQWxCLGtCQUFrQjtJQUNsQiwwQkFBMEI7Q0FDN0I7O0FBRUQsMkJBQTJCOztBQUUzQjtJQUNJLG1CQUFtQjtJQUNuQixTQUFTO0lBQ1QsVUFBVTtJQUNWLFdBQVc7SUFDWCxnQkFBZ0I7Q0FDbkI7O0FBRUQsMEJBQTBCO0FBQzFCO0lBQ0ksbUJBQW1CO0lBQ25CLFNBQVM7SUFDVCxvQ0FBNEI7WUFBNUIsNEJBQTRCO0lBQzVCLFFBQVE7SUFDUixlQUFlO0lBQ2YsWUFBWTtJQUNaLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsc0NBQXNDO0lBQ3RDLDBCQUEwQjtDQUM3Qjs7QUFFRCxtQkFBbUI7QUFDbkI7SUFDSSwwQkFBMEI7Q0FDN0I7O0FBRUQ7SUFDSSxxQ0FBcUM7Q0FDeEM7O0FBRUQsa0NBQWtDO0FBQ2xDOztJQUVJLHlDQUFpQzs7WUFBakMsaUNBQWlDO0lBQ2pDLCtCQUErQjtDQUNsQzs7QUFFRCxrQ0FBa0M7O0FBRWxDLHVDQUF1QztBQUN2QztJQUNJLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsY0FBYztDQUNqQjs7QUFFRCw0QkFBNEI7QUFDNUI7SUFDSSxVQUFVO0lBQ1YsVUFBVTtJQUNWLFlBQVk7SUFDWixhQUFhO0lBQ2Isb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixpQ0FBeUI7WUFBekIseUJBQXlCO0lBQ3pCLFdBQVc7Q0FDZDs7QUFFRCw0QkFBNEI7QUFDNUI7SUFDSSxlQUFlO0NBQ2xCOztBQUVELHVDQUF1QztBQUN2QztJQUNJO1FBQ0ksOENBQXNDO2dCQUF0QyxzQ0FBc0M7UUFDdEMsc0NBQXNDO0tBQ3pDO0lBQ0Q7UUFDSSwrQ0FBdUM7Z0JBQXZDLHVDQUF1QztRQUN2QywrQkFBK0I7S0FDbEM7SUFDRDtRQUNJLDZDQUFxQztnQkFBckMscUNBQXFDO1FBQ3JDLCtCQUErQjtLQUNsQztDQUNKO0FBYkQ7SUFDSTtRQUNJLDhDQUFzQztnQkFBdEMsc0NBQXNDO1FBQ3RDLHNDQUFzQztLQUN6QztJQUNEO1FBQ0ksK0NBQXVDO2dCQUF2Qyx1Q0FBdUM7UUFDdkMsK0JBQStCO0tBQ2xDO0lBQ0Q7UUFDSSw2Q0FBcUM7Z0JBQXJDLHFDQUFxQztRQUNyQywrQkFBK0I7S0FDbEM7Q0FDSiIsImZpbGUiOiJjaGVja2JveC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBiYXNpYyBzdHlsaW5nIG9mIHRoZSB3aG9sZSBjaGVja2JveCBibG9jayAqL1xyXG4uY2hlY2tib3gtY250e1xyXG4gICAgY29sb3I6IHZhcigtLWZpZWxkcy1pbnB1dC10ZXh0KTtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgcGFkZGluZy1sZWZ0OiAzMHB4O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgdXNlci1zZWxlY3Q6IG5vbmU7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xyXG59XHJcblxyXG4vKiBoaWRlIGRlZmF1bHQgY2hlY2tib3ggKi9cclxuXHJcbi5jaGVja2JveC1jbnQgaW5wdXQge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDA7XHJcbiAgICBoZWlnaHQ6IDA7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4vKiBuZXcgY2hlY2tib3ggc3R5bGluZyAqL1xyXG4uY2hlY2tib3hfX3N0YXRle1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMjBweDtcclxuICAgIGhlaWdodDogMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZWxkcy1pbnB1dCk7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xyXG59XHJcblxyXG4vKiBob3ZlciBlZmZlY3RzICovXHJcbi5jaGVja2JveC1jbnQ6aG92ZXJ7XHJcbiAgICBjb2xvcjogdmFyKC0tZmllbGRzLXRleHQpO1xyXG59XHJcblxyXG4uY2hlY2tib3gtY250OmhvdmVyIGlucHV0IH4gLmNoZWNrYm94X19zdGF0ZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZWxkcy10ZXh0KTtcclxufVxyXG5cclxuLyogc3R5bGUgYWZ0ZXIgaW5wdXQgaXMgY2hlY2tlZCAqL1xyXG4uY2hlY2tib3gtY250IGlucHV0OmNoZWNrZWQgfiAuY2hlY2tib3hfX3N0YXRle1xyXG4gICAgXHJcbiAgICBhbmltYXRpb246IG1hcmtDaGVja2JveCAuMnMgZWFzZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXRpdGxlKTtcclxufVxyXG5cclxuLyogY3JlYXRlIGN1c3RvbSBjaGVja21hcmsgYmVsb3cqL1xyXG5cclxuLyogY2hlY2ttYXJrIGhpZGRlbiB3aGVuIG5vdDpjaGVja2VkICovXHJcbi5jaGVja2JveF9fc3RhdGU6OmJlZm9yZXtcclxuICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5cclxuLyogc3R5bGUgb2YgdGhlIGNoZWNrbWFyayAqL1xyXG4uY2hlY2tib3gtY250IC5jaGVja2JveF9fc3RhdGU6OmJlZm9yZXtcclxuICAgIHRvcDogLTNweDtcclxuICAgIGxlZnQ6IDVweDtcclxuICAgIHdpZHRoOiAxMHB4O1xyXG4gICAgaGVpZ2h0OiAxOHB4O1xyXG4gICAgYm9yZGVyOiBzb2xpZCB3aGl0ZTtcclxuICAgIGJvcmRlci13aWR0aDogMCAzcHggM3B4IDA7XHJcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSg0NWRlZyk7XHJcbiAgICB6LWluZGV4OiAyO1xyXG59XHJcblxyXG4vKiBkaXNwbGF5IGFmdGVyIDpjaGVja2VkICovXHJcbi5jaGVja2JveC1jbnQgaW5wdXQ6Y2hlY2tlZCB+IC5jaGVja2JveF9fc3RhdGU6OmJlZm9yZXtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4vKiBhbmltYXRpb24gd2hlbiBjaGVja2JveCBpcyBtYXJrZWQgKi9cclxuQGtleWZyYW1lcyBtYXJrQ2hlY2tib3h7XHJcbiAgICAwJXtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZXkoLTUwJSkgc2NhbGUoLjcpO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWZpZWxkcy1pbnB1dCk7XHJcbiAgICB9XHJcbiAgICA2MCV7XHJcbiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGV5KC01MCUpIHNjYWxlKDEuMyk7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tdGl0bGUpO1xyXG4gICAgfVxyXG4gICAgMTAwJXtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZXkoLTUwJSkgc2NhbGUoMSk7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tdGl0bGUpO1xyXG4gICAgfVxyXG59Il19 */

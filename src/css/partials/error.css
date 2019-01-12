@@ -3,11 +3,11 @@
 .form input[type=number].error,
 .form textarea.error,
 .error,
-.form .radio-cnt input.error ~ .state {
+.form .radio-cnt input.error~.state {
     box-shadow: 0 0 2px 1px var(--error);
 }
 
-.notValid{
+.notValid {
     position: absolute;
     bottom: 0;
     right: 0;

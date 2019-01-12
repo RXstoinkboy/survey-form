@@ -26,36 +26,39 @@
             <!-- CSS grid starts here -->
             <label for="name" class="left" id="name-label">Please enter your name:</label>
             <div class="right-cnt" data-error="Please make sure that input is correct">
-                <input type="text" name="name" placeholder="John Doe" class="right" id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>
+                <input type="text" name="name" placeholder="John Doe" class="right" id="name" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+"
+                    required>
             </div>
-                <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
+            <label for="email" class="left" id="email-label">Please enter your e-mail address:</label>
             <div class="right-cnt" data-error="Please make sure that input is correct">
-                <input type="email" name="email" placeholder="example@example.com" class="right" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+                <input type="email" name="email" placeholder="example@example.com" class="right" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                    required>
             </div>
 
             <label for="number" class="left" id="number-label">How old are you ?</label>
-      <div class="right-cnt" data-error="Please make sure that number is correct">
-            <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" pattern="\d+" required>
-        </div>
+            <div class="right-cnt" data-error="Please make sure that number is correct">
+                <input type="number" min="1" max="150" name="age" placeholder="55" class="right" id="number" pattern="\d+"
+                    required>
+            </div>
             <!-- options -->
             <label for="dropdown" class="left" id="dropdown-label">What is you specialization?</label>
             <!-- ponizej mial klase "right" -->
-                <div class="right select-cnt">
-            <select type="select" name="specialization" id="dropdown" required>
-                <option value="scarfs">Scarfs</option>
-                <option value="pillows">Pillows</option>
-                <option value="socks">Socks</option>
-                <option value="blankets">Blankets</option>
-                <option value="sweaters">Sweaters</option>
-                <option value="carpets">Carpets</option>
-                <option value="hats">Hats</option>
-                <option value="toys">Toys</option>
-                <option value="gloves">Gloves</option>
-                <option value="furniture">Furniture</option>
-                <option value="others">Others</option>
+            <div class="right select-cnt">
+                <select type="select" name="specialization" id="dropdown" required>
+                    <option value="scarfs">Scarfs</option>
+                    <option value="pillows">Pillows</option>
+                    <option value="socks">Socks</option>
+                    <option value="blankets">Blankets</option>
+                    <option value="sweaters">Sweaters</option>
+                    <option value="carpets">Carpets</option>
+                    <option value="hats">Hats</option>
+                    <option value="toys">Toys</option>
+                    <option value="gloves">Gloves</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="others">Others</option>
 
-            </select>
-        </div>
+                </select>
+            </div>
 
             <!-- background radio buttons list-->
             <label for="background" class="left">Which option best decribes why you are knitting?</label>
@@ -63,21 +66,21 @@
                 <ul>
                     <li class="radio">
                         <label class="radio-cnt">Hobby
-                            <input type="radio" class="radio__btn" name="background" value="1">
+                            <input type="radio" class="radio__btn" name="personal-background" value="Hobby">
                             <span class="radio__state"></span>
                         </label>
                     </li>
 
                     <li class="radio">
                         <label class="radio-cnt">Job
-                            <input type="radio" class="radio__btn" name="background" value="2">
+                            <input type="radio" class="radio__btn" name="personal-background" value="Job">
                             <span class="radio__state"></span>
                         </label>
                     </li>
 
                     <li class="radio">
                         <label class="radio-cnt">Other
-                            <input type="radio" class="radio__btn" name="background" value="3">
+                            <input type="radio" class="radio__btn" name="personal_background" value="Other">
                             <span class="radio__state"></span>
                         </label>
                     </li>
@@ -90,67 +93,67 @@
                 <ul>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Scarfs
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="1">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Scarfs">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Blankets
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="2">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Blankets">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Pillows
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="3">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Pillows">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Socks
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="4">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Socks">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Sweaters
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="5">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Sweaters">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Carpets
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="6">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Carpets">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Hats
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="7">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Hats">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Toys
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="8">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Toys">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Gloves
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="9">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Gloves">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Furniture
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="10">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Furniture">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
                     <li class="checkbox">
                         <label class="checkbox-cnt">Others
-                            <input class="checkbox__btn" type="checkbox" name="experience" value="11">
+                            <input class="checkbox__btn" type="checkbox" name="experience" value="Others">
                             <span class="checkbox__state"></span>
                         </label>
                     </li>
@@ -160,19 +163,20 @@
             <!-- textarea for additional comments -->
             <label for="comments" class="top">Please leave your additional comments below:</label>
             <div class="bottom-cnt" data-error="Please write your message before sending">
-            <textarea name="comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?" pattern=".+" required></textarea>
-        </div>
+                <textarea name="user-comments" id="comments" cols="30" rows="10" class="bottom" placeholder="What is on your mind?"
+                    pattern=".+" required></textarea>
+            </div>
             <!-- submit button here -->
-            <button type="submit" class="button" id="submit">Submit</button>
+            <button type="submit" class="button sendingData" id="submit">Submit</button>
 
             <!-- CSS grid ends here -->
         </form>
 
 
-    </fieldset>
+        </fieldset>
 
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script type="module" src="src/js/index.js"></script>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <script type="module" src="src/js/index.js"></script>
 </body>
 
 </html>
