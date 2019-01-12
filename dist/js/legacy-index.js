@@ -86,6 +86,45 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/checkForErrors.js":
+/*!**********************************!*\
+  !*** ./src/js/checkForErrors.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.checkForErrors = checkForErrors;
+
+var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */ "./src/js/toggleValidationHint.js");
+
+function checkForErrors() {
+  var elems = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var fieldsAreValid = {
+    s: true
+  };
+  elems.forEach(function (elem) {
+    console.log(elem);
+
+    if (elem.checkValidity()) {
+      (0, _toggleValidationHint.hideValidationHint)(elem);
+      elem.classList.remove('error');
+    } else {
+      (0, _toggleValidationHint.showValidationHint)(elem);
+      elem.classList.add('error');
+      fieldsAreValid.s = false;
+    }
+  });
+  return fieldsAreValid.s;
+}
+
+/***/ }),
+
 /***/ "./src/js/checkValidity.js":
 /*!*********************************!*\
   !*** ./src/js/checkValidity.js ***!
@@ -101,73 +140,29 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.checkValidity = checkValidity;
 
-function checkValidity(elements) {
-  var fieldsAreValid = {
-    i: true
-  };
-  var bottomCnt = document.querySelector('.bottom-cnt');
-  var bottom = bottomCnt.querySelector('.bottom');
-  var rightCnt = document.querySelector('.right-cnt');
-  var right = rightCnt.querySelector('.right');
-  elements.forEach(function (elem) {
-    if (elem.checkValidity()) {
-      elem.classList.remove('error');
-    } else {
-      elem.classList.add('error');
-      var errorHint = document.createElement('div');
-      var errorText = right.dataset.error;
-      errorHint.classList.add('notValid');
-      errorHint.innerText = errorText;
-      rightCnt.appendChild(errorHint);
-      fieldsAreValid.i = false;
-    }
-  });
-  return fieldsAreValid;
-}
+var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */ "./src/js/toggleValidationHint.js");
 
-/***/ }),
+var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/checkForErrors.js");
 
-/***/ "./src/js/dynamicValidation.js":
-/*!*************************************!*\
-  !*** ./src/js/dynamicValidation.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.dynamicValidation = dynamicValidation;
-
-var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/checkValidity.js");
-
-var _sendData = __webpack_require__(/*! ./sendData.js */ "./src/js/sendData.js");
-
-function dynamicValidation() {
+function checkValidity() {
   var form = document.querySelector('.form');
-  var inputs = form.querySelectorAll('input[required], input[type=radio], textarea[required]'); // disable default validation
-
-  form.setAttribute('novalidate', true); //  check if every element is correct according to given pattern
-
+  var inputs = form.querySelectorAll('input[required], textarea[required]');
+  form.setAttribute('novalidate', true);
   inputs.forEach(function (input) {
     input.addEventListener('input', function () {
       if (!this.checkValidity()) {
         this.classList.add('error');
       } else {
         this.classList.remove('error');
-        hideValidationError(this);
+        (0, _toggleValidationHint.hideValidationHint)(this);
       }
     });
-  }); // after pressing 'submit' check if everything is correct again
-
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if ((0, _checkValidity.checkValidity)(inputs)) {
-      (0, _sendData.sendData)();
+    if ((0, _checkForErrors.checkForErrors)(inputs)) {
+      console.log('zgoda');
     }
   });
 }
@@ -184,20 +179,19 @@ function dynamicValidation() {
 "use strict";
 
 
-var _dynamicValidation = __webpack_require__(/*! ./dynamicValidation.js */ "./src/js/dynamicValidation.js");
-
-var _sendData = __webpack_require__(/*! ./sendData.js */ "./src/js/sendData.js");
-
 var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/checkValidity.js");
 
-(0, _dynamicValidation.dynamicValidation)();
+var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/checkForErrors.js");
+
+(0, _checkValidity.checkValidity)();
+(0, _checkForErrors.checkForErrors)();
 
 /***/ }),
 
-/***/ "./src/js/sendData.js":
-/*!****************************!*\
-  !*** ./src/js/sendData.js ***!
-  \****************************/
+/***/ "./src/js/toggleValidationHint.js":
+/*!****************************************!*\
+  !*** ./src/js/toggleValidationHint.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -207,20 +201,29 @@ var _checkValidity = __webpack_require__(/*! ./checkValidity.js */ "./src/js/che
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendData = sendData;
+exports.showValidationHint = showValidationHint;
+exports.hideValidationHint = hideValidationHint;
 
-function sendData() {
-  var form = document.querySelector('.form');
-  var elements = form.querySelectorAll('input:not(:disabled), textarea:not(:disabled)');
-  var submit = document.querySelector('button'); // prepare data for sending
+function showValidationHint(elem) {
+  var inputCntRight = elem.closest('.right-cnt');
+  var errorFieldRight = inputCntRight.querySelector('.notValid');
 
-  var dataToSend = new FormData();
-  elements.forEach(function (el) {
-    dataToSend.append(el.name, el.value);
-  }); // disable 'submit' button until data is sent
+  if (errorFieldRight === null) {
+    var errorText = inputCntRight.dataset.error;
+    var errorDivRight = document.createElement('div');
+    errorDivRight.classList.add('notValid');
+    errorDivRight.innerText = errorText;
+    inputCntRight.appendChild(errorDivRight);
+  }
+}
 
-  submit.disabled = true;
-  submit.classList.add = 'sendingData';
+function hideValidationHint(elem) {
+  var inputCntRight = elem.closest('.right-cnt');
+  var errorFieldRight = inputCntRight.querySelector('.notValid');
+
+  if (errorFieldRight !== null) {
+    errorFieldRight.remove();
+  }
 }
 
 /***/ })
