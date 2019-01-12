@@ -16,7 +16,7 @@ html{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('./src/images/background-image.jpg');
+    background-image: url('https://github.com/RXstoinkboy/survey-form/blob/master/src/images/background-image.jpg');
     background-position: center;
     background-repeat: repeat;
 }
@@ -74,6 +74,10 @@ input:focus, textarea:focus{
 
 .left__experience{
     text-align: left;
+}
+
+.right__experience{
+    position: relative;
 }
 
 .right, .bottom{

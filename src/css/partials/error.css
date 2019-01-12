@@ -2,7 +2,7 @@
 .form input[type=email].error,
 .form input[type=number].error,
 .form textarea.error,
-.form .checkbox-cnt input.error ~ .state,
+.error,
 .form .radio-cnt input.error ~ .state {
     box-shadow: 0 0 2px 1px rgb(255, 27, 27);
 }

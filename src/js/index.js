@@ -5,5 +5,3 @@ import {showValidationHint, hideValidationHint} from './toggleValidationHint.js'
 
 checkValidity();
 checkForErrors();
-
-

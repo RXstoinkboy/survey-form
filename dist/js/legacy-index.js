@@ -105,21 +105,33 @@ var _toggleValidationHint = __webpack_require__(/*! ./toggleValidationHint.js */
 
 function checkForErrors() {
   var elems = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var checkboxMarked = arguments[1];
   var fieldsAreValid = {
     s: true
   };
   elems.forEach(function (elem) {
-    console.log(elem);
-
-    if (elem.checkValidity()) {
-      (0, _toggleValidationHint.hideValidationHint)(elem);
-      elem.classList.remove('error');
-    } else {
-      (0, _toggleValidationHint.showValidationHint)(elem);
-      elem.classList.add('error');
-      fieldsAreValid.s = false;
+    if (elem.type !== 'checkbox') {
+      if (elem.checkValidity()) {
+        (0, _toggleValidationHint.hideValidationHint)(elem);
+        elem.classList.remove('error');
+      } else {
+        (0, _toggleValidationHint.showValidationHint)(elem);
+        elem.classList.add('error');
+        fieldsAreValid.s = false;
+      }
     }
   });
+  var checkboxFieldset = document.querySelector('.right__experience');
+  console.log(checkboxMarked);
+
+  if (checkboxMarked === 0) {
+    (0, _toggleValidationHint.showValidationHint)(checkboxFieldset);
+    checkboxFieldset.classList.add('error');
+    fieldsAreValid.s = false;
+  } else if (checkboxMarked !== 0) {
+    (0, _toggleValidationHint.hideCheckboxError)(checkboxMarked);
+  }
+
   return fieldsAreValid.s;
 }
 
@@ -147,6 +159,8 @@ var _checkForErrors = __webpack_require__(/*! ./checkForErrors.js */ "./src/js/c
 function checkValidity() {
   var form = document.querySelector('.form');
   var inputs = form.querySelectorAll('input[required], textarea[required]');
+  var checks = form.querySelectorAll('input[type=checkbox]');
+  var checkboxMarked = 0;
   form.setAttribute('novalidate', true);
   inputs.forEach(function (input) {
     input.addEventListener('input', function () {
@@ -158,10 +172,28 @@ function checkValidity() {
       }
     });
   });
+  checks.forEach(function (input) {
+    input.addEventListener('click', function () {
+      var checkboxFieldset = document.querySelector('.right__experience');
+
+      if (this.checked) {
+        checkboxMarked++;
+      } else {
+        checkboxMarked--;
+      }
+
+      if (checkboxMarked !== 0) {
+        checkboxFieldset.classList.remove('error');
+        (0, _toggleValidationHint.hideCheckboxError)(checkboxMarked);
+      } else {
+        checkboxFieldset.classList.add('error');
+      }
+    });
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if ((0, _checkForErrors.checkForErrors)(inputs)) {
+    if ((0, _checkForErrors.checkForErrors)(inputs, checkboxMarked)) {
       console.log('zgoda');
     }
   });
@@ -205,9 +237,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.showValidationHint = showValidationHint;
 exports.hideValidationHint = hideValidationHint;
+exports.hideCheckboxError = hideCheckboxError;
 
 function showValidationHint(elem) {
-  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
+  var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt") || elem.closest(".right__experience");
   var errorField = inputCnt.querySelector('.notValid');
 
   if (errorField === null) {
@@ -222,6 +255,15 @@ function showValidationHint(elem) {
 function hideValidationHint(elem) {
   var inputCnt = elem.closest(".right-cnt") || elem.closest(".bottom-cnt");
   var errorField = inputCnt.querySelector('.notValid');
+
+  if (errorField !== null) {
+    errorField.remove();
+  }
+}
+
+function hideCheckboxError(cnt) {
+  var checkboxCnt = document.querySelector('.right__experience');
+  var errorField = checkboxCnt.querySelector('.notValid');
 
   if (errorField !== null) {
     errorField.remove();
