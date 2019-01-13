@@ -220,7 +220,7 @@ function checkValidity() {
 
     if ((0, _checkForErrors.checkForErrors)(inputs, checkboxMarked, radioMark)) {
       console.log('ready to send');
-      (0, _sendData.sendData)();
+      (0, _sendData.sendData)(form);
     }
   });
 }
@@ -261,7 +261,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.sendData = sendData;
 
-function sendData() {
+function sendData(form) {
   // prepare data which will be sent
   var data = document.querySelectorAll('input:not(:disabled), textarea:not(:disabled), select:not(:disabled)');
   var dataToBeSent = new FormData();
@@ -270,8 +270,28 @@ function sendData() {
   }); // disable submit button to prevent mashing and add loading animation
 
   var submitBtn = document.querySelector('.button');
+  var submitBtnAnimation = submitBtn.querySelector('.dot');
   submitBtn.disabled = true;
   submitBtn.classList.add('sendingData');
+  submitBtnAnimation.classList.add('sendingDataAnimation__dot'); // send data to server
+
+  var url = form.getAttribute('action');
+  var method = form.getAttribute('method').toUpperCase();
+  fetch(url, {
+    method: method,
+    body: dataToBeSent
+  }).then(function (resp) {
+    return resp.json();
+  }).then(function (resp) {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('sendingData');
+    submitBtnAnimation.classList.remove('sendingDataAnimation__dot');
+  }).catch(function (_) {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('sendingData');
+    submitBtnAnimation.classList.remove('sendingDataAnimation__dot');
+  }); // NEXT: write backeng script
+  // NEXT: prepare function to handle errors
 }
 
 /***/ }),

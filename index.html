@@ -21,7 +21,7 @@
 
         <!-- form starts here -->
 
-        <form name="survey-form" class="form" id="survey-form" method="post" action="/send-scripts.php">
+        <form name="survey-form" class="form" id="survey-form" method="post" action="/send-scripts.js">
 
             <!-- CSS grid starts here -->
             <label for="name" class="left" id="name-label">Please enter your name:</label>
@@ -167,7 +167,7 @@
                     pattern=".+" required></textarea>
             </div>
             <!-- submit button here -->
-            <button type="submit" class="button sendingData" id="submit">Submit</button>
+            <button type="submit" class="button" id="submit"><div class="sendingDataAnimation"><div class="dot"></div></div>Submit</button>
 
             <!-- CSS grid ends here -->
         </form>
@@ -176,7 +176,7 @@
         </fieldset>
 
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-        <script type="module" src="src/js/index.js"></script>
+        <script src="dist/js/main.min.js"></script>
 </body>
 
 </html>
