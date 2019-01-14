@@ -274,23 +274,25 @@ function sendData(form) {
   submitBtn.disabled = true;
   submitBtn.classList.add('sendingData');
   submitBtnAnimation.classList.add('sendingDataAnimation__dot'); // send data to server
-
-  var url = form.getAttribute('action');
-  var method = form.getAttribute('method').toUpperCase();
-  fetch(url, {
-    method: method,
-    body: dataToBeSent
-  }).then(function (resp) {
-    return resp.json();
-  }).then(function (resp) {
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('sendingData');
-    submitBtnAnimation.classList.remove('sendingDataAnimation__dot');
-  }).catch(function (_) {
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('sendingData');
-    submitBtnAnimation.classList.remove('sendingDataAnimation__dot');
-  }); // NEXT: write backeng script
+  // uncomment below function call after it is connected with backend script
+  // const url = form.getAttribute('action');
+  // const method = form.getAttribute('method').toUpperCase();
+  // fetch(url, {
+  //     method: method,
+  //     body: dataToBeSent
+  // })
+  // .then(resp => resp.json())
+  // .then(resp => {
+  //     submitBtn.disabled = false;
+  //     submitBtn.classList.remove('sendingData');
+  //     submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
+  // })
+  // .catch(_ => {
+  //     submitBtn.disabled = false;
+  //     submitBtn.classList.remove('sendingData');
+  //     submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
+  // })
+  // NEXT: write backend script to handle data serverside
   // NEXT: prepare function to handle errors
 }
 
@@ -324,6 +326,9 @@ function showValidationHint(elem) {
     errorDivRight.classList.add('notValid');
     errorDivRight.innerText = errorText;
     inputCnt.appendChild(errorDivRight);
+    setTimeout(function () {
+      errorDivRight.classList.add('notValid--animate');
+    }, 10);
   }
 }
 

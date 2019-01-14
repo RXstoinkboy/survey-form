@@ -8,6 +8,7 @@ export function showValidationHint(elem) {
         errorDivRight.classList.add('notValid');
         errorDivRight.innerText = errorText;
         inputCnt.appendChild(errorDivRight);
+        setTimeout(()=>{errorDivRight.classList.add('notValid--animate')}, 10);
     }
 }
 

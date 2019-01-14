@@ -12,25 +12,27 @@ export function sendData(form){
     submitBtnAnimation.classList.add('sendingDataAnimation__dot');
 
     // send data to server
-    const url = form.getAttribute('action');
-    const method = form.getAttribute('method').toUpperCase();
-    
-    fetch(url, {
-        method: method,
-        body: dataToBeSent
-    })
-    .then(resp => resp.json())
-    .then(resp => {
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('sendingData');
-        submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
-    })
-    .catch(_ => {
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('sendingData');
-        submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
-    })
 
-    // NEXT: write backeng script
+    // uncomment below function call after it is connected with backend script
+    // const url = form.getAttribute('action');
+    // const method = form.getAttribute('method').toUpperCase();
+    
+    // fetch(url, {
+    //     method: method,
+    //     body: dataToBeSent
+    // })
+    // .then(resp => resp.json())
+    // .then(resp => {
+    //     submitBtn.disabled = false;
+    //     submitBtn.classList.remove('sendingData');
+    //     submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
+    // })
+    // .catch(_ => {
+    //     submitBtn.disabled = false;
+    //     submitBtn.classList.remove('sendingData');
+    //     submitBtnAnimation.classList.remove('sendingDataAnimation__dot')
+    // })
+
+    // NEXT: write backend script to handle data serverside
     // NEXT: prepare function to handle errors
 }

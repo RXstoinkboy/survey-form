@@ -69,7 +69,7 @@ export function checkValidity() {
         if (checkForErrors(inputs, checkboxMarked, radioMark)) {
             console.log('ready to send');
 
-            sendData(form);
+            sendData(form); 
         }
     })
 }
